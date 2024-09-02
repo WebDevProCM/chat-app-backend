@@ -1,16 +1,17 @@
 const fs = require("fs");
 
-const generateMessage = (message, username) =>{
+const generateMessage = (message, username, icon) =>{
     return {
         message: message,
         username: username,
+        icon: icon,
         time: new Date().toLocaleTimeString(),
         date: new Date().toLocaleString()
     }
 
 }
 
-const addUser = (name, room, id) =>{
+const addUser = (name, room, icon, id) =>{
     const file = loadFile();
     const usernameExistence = file.find((user) =>{
         return user.username === name && user.room == room
@@ -23,6 +24,7 @@ const addUser = (name, room, id) =>{
         id: id,
         username: name,
         room: room,
+        icon: icon,
         time: new Date().toLocaleTimeString()
     }
     file.push(user);
