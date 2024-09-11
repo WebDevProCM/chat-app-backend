@@ -1,5 +1,4 @@
 const http = require("http");
-// const badWords = require("bad-words");
 const path =  require("path");
 const express = require("express");
 const socketio = require("socket.io");
