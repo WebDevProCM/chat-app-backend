@@ -10,7 +10,7 @@ const server = new http.createServer(app);
 
 const io = socketio(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: process.env.CLIENT,
     }
 });
 
